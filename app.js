@@ -45,3 +45,5 @@ searchBox.addEventListener("keypress", function(e){
         checkWeather(searchBox.value);
     }
 });
+
+checkWeather("Rajahmundry");
