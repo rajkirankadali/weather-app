@@ -26,9 +26,22 @@ async function checkWeather(city){
     else if(data.weather[0].main == "Mist"){
         weatherIcon.src = "images/mist.png";
     }
+    else if(data.weather[0].main == "Clear"){
+        weatherIcon.src = "images/clear.png";
+    }
+    else if(data.weather[0].main == "Snow"){
+        weatherIcon.src = "images/snow.png";
+    }
+
 }
+
 
 searchBtn.addEventListener("click", ()=>{
     checkWeather(searchBox.value);
 })
 
+searchBox.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        checkWeather(searchBox.value);
+    }
+});

@@ -7,6 +7,7 @@
 
 body{
     background-color: #271F30;
+    transition: background 0.5s ease;
 }
 
 .card{
@@ -18,9 +19,12 @@ body{
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
 .search{
     width: 100%;
     display: flex;
@@ -39,8 +43,12 @@ body{
     flex: 1;
     margin-right: 16px;
     font-size: 18px;
+    transition: border-radius 0.3s ease, box-shadow 0.3s ease;
 }
-
+.search input:focus {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+}
 .search button {
     border: 0;
     outline: 0;
@@ -49,6 +57,11 @@ body{
     height: 60px;
     width: 60px;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.search button:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .search button img {
@@ -91,3 +104,13 @@ body{
     margin-top: -1px;
 }
 
+
+.weather-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
